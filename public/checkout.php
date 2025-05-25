@@ -1,5 +1,6 @@
 <?php
 require_once '../init.php';
+require_once '../config/db.php';
 
 if (!isUser()) {
     echo "Unauthorized access.";
@@ -54,7 +55,7 @@ if ($result->num_rows > 0) {
     $msg = "No active charging session found.";
 }
 ?>
-
+<?php include '../includes/header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -76,3 +77,4 @@ if ($result->num_rows > 0) {
     <p style="color:green"><?= $msg ?></p>
 </body>
 </html>
+<?php include '../includes/footer.php'; ?>

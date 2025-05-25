@@ -10,7 +10,7 @@ if (!isAdmin()) {
 $location = new Location();
 $locations = $location->getAllLocations();
 ?>
-
+<?php include '../includes/header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,3 +36,4 @@ $locations = $location->getAllLocations();
     </table>
 </body>
 </html>
+<?php include '../includes/footer.php'; ?>

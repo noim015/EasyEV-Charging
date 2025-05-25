@@ -28,7 +28,7 @@ if (isset($_GET['id'])) {
     $editLocation = $location->getLocationById($_GET['id']);
 }
 ?>
-
+<?php include '../includes/header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -67,3 +67,4 @@ if (isset($_GET['id'])) {
     <?php endif; ?>
 </body>
 </html>
+<?php include '../includes/footer.php'; ?>

@@ -32,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
-
+<?php include '../includes/header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -54,3 +54,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <p style="color:red"><?= $msg ?></p>
 </body>
 </html>
+<?php include '../includes/footer.php'; ?>

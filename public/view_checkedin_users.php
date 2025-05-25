@@ -1,5 +1,6 @@
 <?php
 require_once '../init.php';
+require_once '../config/db.php';
 
 if (!isAdmin()) {
     echo "Unauthorized access.";
@@ -17,7 +18,7 @@ $sql = "
 ";
 $result = $conn->query($sql);
 ?>
-
+<?php include '../includes/header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,3 +44,4 @@ $result = $conn->query($sql);
     </table>
 </body>
 </html>
+<?php include '../includes/footer.php'; ?>

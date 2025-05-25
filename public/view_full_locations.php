@@ -23,7 +23,7 @@ $sql = "
 ";
 $result = $conn->query($sql);
 ?>
-
+<?php include '../includes/header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -47,3 +47,4 @@ $result = $conn->query($sql);
     </table>
 </body>
 </html>
+<?php include '../includes/footer.php'; ?>

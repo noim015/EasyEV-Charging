@@ -1,5 +1,6 @@
 <?php
 require_once '../init.php';
+require_once '../config/db.php';
 
 if (!isUser()) {
     echo "Unauthorized access.";
@@ -22,7 +23,7 @@ $stmt->bind_param("i", $userId);
 $stmt->execute();
 $result = $stmt->get_result();
 ?>
-
+<?php include '../includes/header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -53,3 +54,4 @@ $result = $stmt->get_result();
     <?php endif; ?>
 </body>
 </html>
+<?php include '../includes/footer.php'; ?>

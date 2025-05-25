@@ -6,7 +6,7 @@ if (!isAdmin()) {
     exit;
 }
 ?>
-
+<?php include '../includes/header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,3 +28,4 @@ if (!isAdmin()) {
     </ul>
 </body>
 </html>
+<?php include '../includes/footer.php'; ?>

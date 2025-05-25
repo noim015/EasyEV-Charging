@@ -6,7 +6,7 @@ if (!isUser()) {
     exit;
 }
 ?>
-
+<?php include '../includes/header.php'; ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,3 +26,4 @@ if (!isUser()) {
     </ul>
 </body>
 </html>
+<?php include '../includes/footer.php'; ?>
