@@ -32,5 +32,23 @@ class Location {
         $stmt->bind_param("sidi", $description, $numStations, $costPerHour, $id);
         return $stmt->execute();
     }
+
+    public function getAvailableLocations() {
+    $sql = "
+        SELECT l.*, 
+        (l.num_stations - COALESCE(used.count, 0)) AS available 
+        FROM charging_locations l
+        LEFT JOIN (
+            SELECT location_id, COUNT(*) AS count 
+            FROM checkins 
+            WHERE checkout_time IS NULL 
+            GROUP BY location_id
+        ) used ON l.location_id = used.location_id
+        HAVING available > 0
+    ";
+    $result = $this->conn->query($sql);
+    return $result->fetch_all(MYSQLI_ASSOC);
+}
+
 }
 ?>
