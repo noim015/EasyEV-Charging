@@ -22,26 +22,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <?php include '../includes/header.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Add Charging Location</title>
-</head>
-<body>
-    <h2>Add New Charging Location</h2>
-    <form method="POST">
-        <label>Description:</label><br>
-        <input type="text" name="description" required><br><br>
 
-        <label>Number of Stations:</label><br>
-        <input type="number" name="num_stations" required><br><br>
+    <div class="container">
+        <h2>Add New Charging Location</h2>
+        <form method="POST">
+            <label>Description:</label><br>
+            <input type="text" name="description" required><br><br>
 
-        <label>Cost Per Hour ($):</label><br>
-        <input type="number" name="cost_per_hour" step="0.01" required><br><br>
+            <label>Number of Stations:</label><br>
+            <input type="number" name="num_stations" required><br><br>
 
-        <input type="submit" value="Add Location">
-    </form>
-    <p style="color:green"><?= $msg ?></p>
-</body>
-</html>
+            <label>Cost Per Hour ($):</label><br>
+            <input type="number" name="cost_per_hour" step="0.01" required><br><br>
+
+            <input type="submit" value="Add Location">
+        </form>
+        <p style="color:green"><?= $msg ?></p>
+    </div>
 <?php include '../includes/footer.php'; ?>

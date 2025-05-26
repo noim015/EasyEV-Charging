@@ -14,9 +14,18 @@ if (isLoggedIn()) {
 
 <?php include '../includes/header.php'; ?>
 
-<h2>Welcome to EasyEV-Charging</h2>
-<p>This is an online platform to check-in and charge your electric vehicle with ease.</p>
-
-<p><a href="login.php">Login</a> or <a href="register.php">Register</a> to begin.</p>
+<!-- Hero Section with Background Image -->
+<div class="hero-section">
+    <div class="hero-content">
+        <div class="container">
+            <h2>Welcome to <span style="color: #FFD700;">EasyEV-Charging</span></h2>
+            <p>Charge your electric vehicle smartly and securely at any time.</p>
+            <div class="hero-buttons">
+                <a href="login.php" class="btn">Login</a>
+                <a href="register.php" class="btn-outline">Register</a>
+            </div>
+        </div>
+    </div>
+</div>
 
 <?php include '../includes/footer.php'; ?>

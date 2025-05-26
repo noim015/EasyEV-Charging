@@ -56,12 +56,8 @@ if ($result->num_rows > 0) {
 }
 ?>
 <?php include '../includes/header.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Check-Out - EasyEV-Charging</title>
-</head>
-<body>
+
+<div class="container">
     <h2>End Charging (Check-Out)</h2>
 
     <?php if ($activeSession): ?>
@@ -75,6 +71,7 @@ if ($result->num_rows > 0) {
     <?php endif; ?>
 
     <p style="color:green"><?= $msg ?></p>
-</body>
-</html>
+</div>
+    
+
 <?php include '../includes/footer.php'; ?>

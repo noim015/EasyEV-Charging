@@ -24,34 +24,30 @@ $stmt->execute();
 $result = $stmt->get_result();
 ?>
 <?php include '../includes/header.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Charging History</title>
-</head>
-<body>
-    <h2>My Charging History</h2>
 
-    <?php if ($result->num_rows > 0): ?>
-        <table border="1">
-            <tr>
-                <th>Location</th>
-                <th>Check-in Time</th>
-                <th>Check-out Time</th>
-                <th>Total Cost ($)</th>
-            </tr>
-            <?php while ($row = $result->fetch_assoc()): ?>
+    <div class="container">
+        <h2>My Charging History</h2>
+
+        <?php if ($result->num_rows > 0): ?>
+            <table border="1">
                 <tr>
-                    <td><?= $row['description'] ?></td>
-                    <td><?= $row['checkin_time'] ?></td>
-                    <td><?= $row['checkout_time'] ?></td>
-                    <td><?= $row['total_cost'] ?></td>
+                    <th>Location</th>
+                    <th>Check-in Time</th>
+                    <th>Check-out Time</th>
+                    <th>Total Cost ($)</th>
                 </tr>
-            <?php endwhile; ?>
-        </table>
-    <?php else: ?>
-        <p>No charging history found.</p>
-    <?php endif; ?>
-</body>
-</html>
+                <?php while ($row = $result->fetch_assoc()): ?>
+                    <tr>
+                        <td><?= $row['description'] ?></td>
+                        <td><?= $row['checkin_time'] ?></td>
+                        <td><?= $row['checkout_time'] ?></td>
+                        <td><?= $row['total_cost'] ?></td>
+                    </tr>
+                <?php endwhile; ?>
+            </table>
+        <?php else: ?>
+            <p>No charging history found.</p>
+        <?php endif; ?>
+    </div>
+
 <?php include '../includes/footer.php'; ?>

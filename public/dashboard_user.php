@@ -7,23 +7,18 @@ if (!isUser()) {
 }
 ?>
 <?php include '../includes/header.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>User Dashboard - EasyEV-Charging</title>
-    <link rel="stylesheet" href="../assets/styles.css">
-</head>
-<body>
-    <h2>Welcome User, <?= $_SESSION['user']['name'] ?>!</h2>
 
-    <ul>
-        <li><a href="view_available_locations.php">View Available Charging Stations</a></li>
-        <li><a href="checkin.php">Check-In to Charge</a></li>
-        <li><a href="checkout.php">Check-Out</a></li>
-        <li><a href="my_locations.php">My Charging History</a></li>
-        <li><a href="my_current_charging.php">Currently Charging</a></li>
-        <li><a href="logout.php">Logout</a></li>
-    </ul>
-</body>
-</html>
+    <div class="container">
+        <h2>Welcome User, <?= $_SESSION['user']['name'] ?>!</h2>
+
+        <ul>
+            <li><a href="search_locations.php">Search Available Charging Stations</a></li>
+            <li><a href="checkin.php">Check-In to Charge</a></li>
+            <li><a href="checkout.php">Check-Out</a></li>
+            <li><a href="my_locations.php">My Charging History</a></li>
+            <li><a href="my_current_charging.php">Currently Charging</a></li>
+            <li><a href="logout.php">Logout</a></li>
+        </ul>
+    </div>
+
 <?php include '../includes/footer.php'; ?>

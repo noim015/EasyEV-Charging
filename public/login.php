@@ -33,25 +33,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <?php include '../includes/header.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Login - EasyEV-Charging</title>
-    <link rel="stylesheet" href="../assets/styles.css">
-</head>
-<body>
-    <h2>Login</h2>
-    <form method="POST" action="">
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br><br>
 
-        <label>Password:</label><br>
-        <input type="password" name="password" required><br><br>
+    <div class="container">
+        <h2>Login</h2>
+        <form method="POST" action="">
+            <label>Email:</label><br>
+            <input type="email" name="email" required><br><br>
 
-        <input type="submit" value="Login">
-    </form>
+            <label>Password:</label><br>
+            <input type="password" name="password" required><br><br>
 
-    <p style="color:red"><?= $msg ?></p>
-</body>
-</html>
+            <input type="submit" value="Login">
+        </form>
+
+        <p style="color:red"><?= $msg ?></p>
+    </div>
+
 <?php include '../includes/footer.php'; ?>

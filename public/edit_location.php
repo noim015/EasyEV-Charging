@@ -29,42 +29,38 @@ if (isset($_GET['id'])) {
 }
 ?>
 <?php include '../includes/header.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Edit Charging Location</title>
-</head>
-<body>
-    <h2>Edit Charging Location</h2>
 
-    <form method="GET">
-        <label>Select Location to Edit:</label>
-        <select name="id" onchange="this.form.submit()">
-            <option value="">--Choose--</option>
-            <?php foreach ($locations as $loc): ?>
-                <option value="<?= $loc['location_id'] ?>" <?= (isset($editLocation) && $editLocation['location_id'] == $loc['location_id']) ? 'selected' : '' ?>>
-                    <?= $loc['description'] ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-    </form>
+    <div class="container">
+        <h2>Edit Charging Location</h2>
 
-    <?php if (isset($editLocation)): ?>
-        <form method="POST">
-            <input type="hidden" name="location_id" value="<?= $editLocation['location_id'] ?>">
-            <label>Description:</label><br>
-            <input type="text" name="description" value="<?= $editLocation['description'] ?>" required><br><br>
-
-            <label>Number of Stations:</label><br>
-            <input type="number" name="num_stations" value="<?= $editLocation['num_stations'] ?>" required><br><br>
-
-            <label>Cost Per Hour ($):</label><br>
-            <input type="number" name="cost_per_hour" value="<?= $editLocation['cost_per_hour'] ?>" step="0.01" required><br><br>
-
-            <input type="submit" value="Update Location">
+        <form method="GET">
+            <label>Select Location to Edit:</label>
+            <select name="id" onchange="this.form.submit()">
+                <option value="">--Choose--</option>
+                <?php foreach ($locations as $loc): ?>
+                    <option value="<?= $loc['location_id'] ?>" <?= (isset($editLocation) && $editLocation['location_id'] == $loc['location_id']) ? 'selected' : '' ?>>
+                        <?= $loc['description'] ?>
+                    </option>
+                <?php endforeach; ?>
+            </select>
         </form>
-        <p style="color:green"><?= $msg ?></p>
-    <?php endif; ?>
-</body>
-</html>
+
+        <?php if (isset($editLocation)): ?>
+            <form method="POST">
+                <input type="hidden" name="location_id" value="<?= $editLocation['location_id'] ?>">
+                <label>Description:</label><br>
+                <input type="text" name="description" value="<?= $editLocation['description'] ?>" required><br><br>
+
+                <label>Number of Stations:</label><br>
+                <input type="number" name="num_stations" value="<?= $editLocation['num_stations'] ?>" required><br><br>
+
+                <label>Cost Per Hour ($):</label><br>
+                <input type="number" name="cost_per_hour" value="<?= $editLocation['cost_per_hour'] ?>" step="0.01" required><br><br>
+
+                <input type="submit" value="Update Location">
+            </form>
+            <p style="color:green"><?= $msg ?></p>
+        <?php endif; ?>
+    </div>
+
 <?php include '../includes/footer.php'; ?>

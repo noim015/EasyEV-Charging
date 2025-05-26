@@ -22,38 +22,33 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <?php include '../includes/header.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Register - EasyEV-Charging</title>
-    <link rel="stylesheet" href="../assets/styles.css">
-</head>
-<body>
-    <h2>Register</h2>
-    <form method="POST" action="">
-        <label>Name:</label><br>
-        <input type="text" name="name" required><br><br>
 
-        <label>Phone:</label><br>
-        <input type="text" name="phone" required><br><br>
+    <div class="container">
+        <h2>Register</h2>
+        <form method="POST" action="">
+            <label>Name:</label><br>
+            <input type="text" name="name" required><br><br>
 
-        <label>Email:</label><br>
-        <input type="email" name="email" required><br><br>
+            <label>Phone:</label><br>
+            <input type="text" name="phone" required><br><br>
 
-        <label>Password:</label><br>
-        <input type="password" name="password" required><br><br>
+            <label>Email:</label><br>
+            <input type="email" name="email" required><br><br>
 
-        <label>User Type:</label><br>
-        <select name="type" required>
-            <option value="">--Select--</option>
-            <option value="user">User</option>
-            <option value="admin">Admin</option>
-        </select><br><br>
+            <label>Password:</label><br>
+            <input type="password" name="password" required><br><br>
 
-        <input type="submit" value="Register">
-    </form>
+            <label>User Type:</label><br>
+            <select name="type" required>
+                <option value="">--Select--</option>
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select><br><br>
 
-    <p style="color:green"><?= $msg ?></p>
-</body>
-</html>
+            <input type="submit" value="Register">
+        </form>
+
+        <p style="color:green"><?= $msg ?></p>
+    </div>
+
 <?php include '../includes/footer.php'; ?>

@@ -45,12 +45,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 ?>
 <?php include '../includes/header.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Check-In - EasyEV-Charging</title>
-</head>
-<body>
+
+<div class="container">
     <h2>Start Charging (Check-In)</h2>
 
     <form method="POST">
@@ -68,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     </form>
 
     <p style="color:green"><?= $msg ?></p>
-</body>
-</html>
+</div>
+    
+
 <?php include '../includes/footer.php'; ?>

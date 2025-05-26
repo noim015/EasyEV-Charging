@@ -28,13 +28,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+<?php include '../includes/header.php'; ?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Search Locations</title>
-</head>
-<body>
+<div class="container">
     <h2>Search Charging Locations</h2>
 
     <form method="POST">
@@ -63,5 +59,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endforeach; ?>
         </table>
     <?php endif; ?>
-</body>
-</html>
+</div>
+    
+<?php include '../includes/footer.php'; ?>

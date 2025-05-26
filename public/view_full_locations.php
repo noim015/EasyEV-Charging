@@ -24,27 +24,23 @@ $sql = "
 $result = $conn->query($sql);
 ?>
 <?php include '../includes/header.php'; ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Full Charging Locations</title>
-</head>
-<body>
-    <h2>Locations That Are Full</h2>
-    <table border="1">
-        <tr>
-            <th>Description</th>
-            <th>Total Stations</th>
-            <th>Occupied</th>
-        </tr>
-        <?php while ($row = $result->fetch_assoc()): ?>
-        <tr>
-            <td><?= $row['description'] ?></td>
-            <td><?= $row['num_stations'] ?></td>
-            <td><?= $row['used'] ?></td>
-        </tr>
-        <?php endwhile; ?>
-    </table>
-</body>
-</html>
+
+    <div class="container">
+        <h2>Locations That Are Full</h2>
+        <table border="1">
+            <tr>
+                <th>Description</th>
+                <th>Total Stations</th>
+                <th>Occupied</th>
+            </tr>
+            <?php while ($row = $result->fetch_assoc()): ?>
+            <tr>
+                <td><?= $row['description'] ?></td>
+                <td><?= $row['num_stations'] ?></td>
+                <td><?= $row['used'] ?></td>
+            </tr>
+            <?php endwhile; ?>
+        </table>
+    </div>
+
 <?php include '../includes/footer.php'; ?>
