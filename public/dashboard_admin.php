@@ -11,7 +11,7 @@ if (!isAdmin()) {
     <div class="container">
         <h2>Welcome Admin, <?= $_SESSION['user']['name'] ?>!</h2>
 
-        <ul>
+        <ul class="listing-item">
             <li><a href="add_location.php">Add Charging Location</a></li>
             <li><a href="edit_location.php">Edit Charging Location</a></li>
             <li><a href="view_all_locations.php">View All Locations</a></li>

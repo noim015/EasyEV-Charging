@@ -11,7 +11,7 @@ if (!isUser()) {
     <div class="container">
         <h2>Welcome User, <?= $_SESSION['user']['name'] ?>!</h2>
 
-        <ul>
+        <ul class="listing-item">
             <li><a href="search_locations.php">Search Available Charging Stations</a></li>
             <li><a href="checkin.php">Check-In to Charge</a></li>
             <li><a href="checkout.php">Check-Out</a></li>

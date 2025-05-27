@@ -1,6 +1,6 @@
 <?php include '../includes/header.php'; ?>
 
-<div class="container" style="max-width: 600px; margin: 0 auto;">
+<div class="container" style="padding:2% 0;">
     <h2 style="text-align: center;">Contact Us</h2>
 
     <form method="POST" action="contact.php" style="margin-top: 30px;">

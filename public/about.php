@@ -1,6 +1,6 @@
 <?php include '../includes/header.php'; ?>
 
-<div class="container" style="max-width: 800px; margin: 0 auto; text-align: center;">
+<div class="container" style="padding:2% 0;">
     <h2>About EasyEV-Charging</h2>
     <p style="margin: 20px 0;">
         EasyEV-Charging is a smart and user-friendly platform designed to make electric vehicle charging simple, efficient, and accessible. 

@@ -9,22 +9,30 @@ body {
 .container {
     width: 90%;
     margin: 0 auto;
+    padding: 2% 0;
 }
 
 /* Header Styles */
 header {
-    background-color: #1D4ED8;  /* Blue background */
+    background-color: #4b4734;  /* Blue background */
     color: white;
     padding: 20px 0;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
+.container_top{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+#role_area{
+    background: #413a1c;
+    padding: 2%;
+}
 header h1 {
     margin: 0;
     font-size: 24px;
     padding-left: 20px;
 }
-
 nav {
     display: flex;
     justify-content: flex-end;
@@ -102,13 +110,66 @@ form {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-input[type="text"], input[type="password"], input[type="email"], select {
-    width: 100%;
-    padding: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px 15px;
+  margin-bottom: 15px;
+  font-size: 16px;
+  font-family: inherit;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
+input[type="submit"]{
+    background-color: #1D4ED8;
+    color: white;
+    padding: 12px 24px;
+    margin: 0 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+/* Placeholder style */
+input::placeholder,
+textarea::placeholder {
+  color: #999;
+  font-style: italic;
+}
+
+/* Focus state */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: #1D4ED8; /* Bright blue */
+  box-shadow: 0 0 5px rgba(29, 78, 216, 0.5);
+  background-color: #f9fafb; /* Slightly lighter background */
+}
+
+/* Disabled/Readonly */
+input:disabled,
+input[readonly],
+textarea:disabled,
+textarea[readonly] {
+  background-color: #eee;
+  cursor: not-allowed;
+}
+
+/* Optional: add subtle inner shadow */
+input,
+textarea {
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.06);
+}
+
 
 button {
     padding: 10px 20px;
@@ -124,6 +185,57 @@ button:hover {
     background-color: #FFD700;  /* Gold on hover */
 }
 
+/* Base link style */
+.listing-item a {
+  color: #1D4ED8; /* Bright blue */
+  font-weight: 600;
+  text-decoration: none;
+  padding: 4px 6px;
+  border-radius: 4px;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+/* Hover & Focus */
+.listing-item a:hover,
+.listing-item a:focus {
+  color: #FBBF24; /* Vibrant yellow */
+  background-color: #1E40AF; /* Darker blue background */
+  text-decoration: underline;
+  box-shadow: 0 4px 8px rgba(251, 191, 36, 0.5);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+/* Optional animated underline */
+.listing-item a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #FBBF24;
+  transition: width 0.3s ease;
+}
+
+.listing-item a:hover::after,
+.listing-item a:focus::after {
+  width: 100%;
+}
+
+/* Larger font size for important links */
+.listing-item a.important {
+  font-size: 1.1rem;
+}
+
+
+footer{
+    background:#4b4734;
+    text-align:center;
+    padding:10px;
+}
 /* Responsive Layout for Large Screens */
 @media screen and (min-width: 769px) {
     body {
@@ -231,4 +343,81 @@ button:hover {
 .hero-buttons a.btn-outline:hover {
     background-color: white;
     color: #1D4ED8;
+}
+
+/* Basic Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  color: #333;
+}
+
+/* Table Header */
+thead tr {
+  background-color: #1D4ED8; /* Blue header */
+  color: white;
+  text-align: left;
+}
+
+/* Table Cells */
+th, td {
+  padding: 12px 15px;
+  border: 1px solid #ddd;
+}
+
+/* Zebra Striping for Rows */
+tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* Hover effect for rows */
+tbody tr:hover {
+  background-color: #f1f5f9;
+}
+
+/* Responsive Table Wrapper */
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+/* Small screen adjustments */
+@media (max-width: 600px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+
+  thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  tr {
+    margin-bottom: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+  }
+
+  td {
+    border: none;
+    padding-left: 50%;
+    position: relative;
+    text-align: right;
+  }
+
+  td::before {
+    content: attr(data-label); /* Uses the data-label attribute */
+    position: absolute;
+    left: 10px;
+    width: 45%;
+    padding-left: 10px;
+    font-weight: bold;
+    text-align: left;
+    white-space: nowrap;
+  }
 }

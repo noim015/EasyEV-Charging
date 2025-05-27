@@ -5,7 +5,7 @@
    </script>
 
     </main>
-    <footer style="background:#eee;text-align:center;padding:10px;">
+    <footer>
         <p>&copy; <?= date('Y') ?> EasyEV-Charging</p>
     </footer>
 </body>
